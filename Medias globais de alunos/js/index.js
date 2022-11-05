@@ -37,7 +37,7 @@ function verificar () {
             return;
         }
 
-        if (cont == 4) {break}; 
+        if (cont == 4) {break};      // ele fica listando uns negocios estranho dps das notas //
     };
 
     calcular()
@@ -57,7 +57,7 @@ function calcular () {
         cont ++;
         let n = Number(notas[nota].value);
         ListaNotas.push(n)
-        if (cont == 4) {break};    
+        if (cont == 4) {break};      // ele fica listando uns negocios estranho dps das notas //
     };
 
     var media, resultadohtml, nomehtml, mediahtml, notafinalhtml;
@@ -70,7 +70,7 @@ function calcular () {
 
     /* Informando o resultado */
     nomehtml.innerHTML = `Nome:  ${document.getElementById('nome').value} `;
-    mediahtml.innerHTML = `Media:  ${media} `;
+    mediahtml.innerHTML = `Media:  ${media.toFixed(2)} `;
 
     if (media >= 7) {
         resultadohtml.innerHTML = `Resutado - APROVADO`;
@@ -79,13 +79,12 @@ function calcular () {
         resultadohtml.innerHTML = `Resultado - REPROVADO`;
         document.getElementById('topo').style.background = 'rgb(255,0,0)';
 
-    } else if(media>4 && media<7) {
+    } else if(media>=4 && media<7) {
         resultadohtml.innerHTML = `Resultado - PROVA FINAL`;
         document.getElementById('topo').style.background = 'orange';
-        var pontosfinais = (50 - (media * 6)) / 4
-        notafinalhtml.innerHTML = `Precisa de <b>${pontosfinais.toFixed(2)}</b> na prova final `;
+        var pontosfinais = (50 - (media * 6)) / 4;
+        notafinalhtml.innerText = `Precisa de ${pontosfinais.toFixed(2)} na prova final `;
     }
-
 
 };
 
