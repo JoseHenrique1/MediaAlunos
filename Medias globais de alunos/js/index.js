@@ -37,7 +37,7 @@ function verificar () {
             return;
         }
 
-        if (cont == 4) {break};      // ele fica listando uns negocios estranho dps das notas //
+        if (cont == 4) {break}; 
     };
 
     calcular()
@@ -57,7 +57,7 @@ function calcular () {
         cont ++;
         let n = Number(notas[nota].value);
         ListaNotas.push(n)
-        if (cont == 4) {break};      // ele fica listando uns negocios estranho dps das notas //
+        if (cont == 4) {break};    
     };
 
     var media, resultadohtml, nomehtml, mediahtml, notafinalhtml;
